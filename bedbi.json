@@ -1,10 +1,5 @@
 [
     {
-        "value": 40,
-        "name": "Accessibility",
-        "path": "Accessibility"
-    },
-    {
         "value": 100,
         "name": "Inhalte und Werkzeuge",
         "path": "Inhalte und Werkzeuge",
@@ -41,8 +36,40 @@
             },
             {
                 "value": 20,
-                "name": "Rechtliche Standards",
-                "path": "Inhalte und Werkzeuge/Rechtliche Standards"
+                "name": "Schnittstellen",
+                "path": "Inhalte und Werkzeuge/Schnittstellen"
+            },
+            {
+                "value": 20,
+                "name": "Learning Record Store",
+                "path": "Inhalte und Werkzeuge/Learning Record Store"
+            },
+            {
+                "value": 20,
+                "name": "Office-Anwendungen",
+                "path": "Inhalte und Werkzeuge/Office-Anwendungen"
+            },
+            {
+                "value": 20,
+                "name": "Lern-Management-System (LMS)",
+                "path": "Inhalte und Werkzeuge/Lern-Management-System (LMS)"
+            },
+            {
+                "value": 20,
+                "name": "Weitere Tools",
+                "path": "Inhalte und Werkzeuge/Weitere Tools"
+            }
+        ]
+    },
+    {
+        "value": 100,
+        "name": "Pädagogische Oberfläche",
+        "path": "Pädagogische Oberfläche",
+        "children": [
+            {
+                "value": 20,
+                "name": "Technische Standards",
+                "path": "Inhalte und Werkzeuge/Technische Standards"
             },
             {
                 "value": 20,
@@ -51,18 +78,48 @@
             },
             {
                 "value": 20,
-                "name": "Rechtliche Standards",
-                "path": "Inhalte und Werkzeuge/Rechtliche Standards"
+                "name": "Prüfverfahren",
+                "path": "Inhalte und Werkzeuge/Prüfverfahren"
             },
             {
                 "value": 20,
-                "name": "Rechtliche Standards",
-                "path": "Inhalte und Werkzeuge/Rechtliche Standards"
+                "name": "OER",
+                "path": "Inhalte und Werkzeuge/OER"
             },
             {
                 "value": 20,
-                "name": "Rechtliche Standards",
-                "path": "Inhalte und Werkzeuge/Rechtliche Standards"
+                "name": "Metadaten",
+                "path": "Inhalte und Werkzeuge/Metadaten"
+            },
+            {
+                "value": 20,
+                "name": "Repositorien / Referatorien",
+                "path": "Inhalte und Werkzeuge/Repositorien / Referatorien"
+            },
+            {
+                "value": 20,
+                "name": "Schnittstellen",
+                "path": "Inhalte und Werkzeuge/Schnittstellen"
+            },
+            {
+                "value": 20,
+                "name": "Learning Record Store",
+                "path": "Inhalte und Werkzeuge/Learning Record Store"
+            },
+            {
+                "value": 20,
+                "name": "Office-Anwendungen",
+                "path": "Inhalte und Werkzeuge/Office-Anwendungen"
+            },
+            {
+                "value": 20,
+                "name": "Lern-Management-System (LMS)",
+                "path": "Inhalte und Werkzeuge/Lern-Management-System (LMS)"
+            },
+            {
+                "value": 20,
+                "name": "Weitere Tools",
+                "path": "Inhalte und Werkzeuge/Weitere Tools"
             }
         ]
     }
