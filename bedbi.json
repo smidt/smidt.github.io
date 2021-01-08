@@ -57,7 +57,19 @@
             {
                 "value": 20,
                 "name": "Weitere Tools",
-                "path": "Inhalte und Werkzeuge/Weitere Tools"
+                "path": "Inhalte und Werkzeuge/Weitere Tools",
+                "children": [
+                    {
+                        "value": 20,
+                        "name": "Digitale Schulbücher",
+                        "path": "Inhalte und Werkzeuge/Weitere Tools/Digitale Schulbücher"
+                    },
+                    {
+                        "value": 20,
+                        "name": "Lehrmittel Portale",
+                        "path": "Inhalte und Werkzeuge/Weitere Tools/Lehrmittel Portale"
+                    }
+                ]
             }
         ]
     },
