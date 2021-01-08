@@ -9,8 +9,8 @@
     	<div id="chart" style="width: 500px; height: 350px;"></div>
     	<script>				
 			var chart = document.getElementById('chart');
-    		var myChart = echarts.init(chart);
-    		myChart.showLoading();
+			var myChart = echarts.init(chart);
+			myChart.showLoading();
 
 			$.get('https://smidt.github.io/disk.tree.json', function (diskData) {
 			myChart.hideLoading();
@@ -64,7 +64,7 @@
     myChart.setOption(option = {
 
         title: {
-            text: 'Disk Usage',
+            text: 'Bausteine einer digitalen Bildungsinfrastruktur',
             left: 'center'
         },
 
@@ -87,7 +87,7 @@
 
         series: [
             {
-                name: 'Disk Usage',
+                name: 'Bausteine',
                 type: 'treemap',
                 visibleMin: 300,
                 label: {
