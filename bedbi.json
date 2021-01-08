@@ -68,58 +68,38 @@
         "children": [
             {
                 "value": 20,
-                "name": "Technische Standards",
-                "path": "Inhalte und Werkzeuge/Technische Standards"
+                "name": "Dateiablage",
+                "path": "Inhalte und Werkzeuge/Dateiablage"
             },
             {
                 "value": 20,
-                "name": "Rechtliche Standards",
-                "path": "Inhalte und Werkzeuge/Rechtliche Standards"
+                "name": "Gemeinsame Dokumentenbearbeitung",
+                "path": "Inhalte und Werkzeuge/Gemeinsame Dokumentenbearbeitung"
             },
             {
                 "value": 20,
-                "name": "Prüfverfahren",
-                "path": "Inhalte und Werkzeuge/Prüfverfahren"
+                "name": "Lern- und Projektgruppen einrichten und verwalten",
+                "path": "Inhalte und Werkzeuge/Lern- und Projektgruppen einrichten und verwalten"
             },
             {
                 "value": 20,
-                "name": "OER",
-                "path": "Inhalte und Werkzeuge/OER"
+                "name": "Wissensmanagement",
+                "path": "Inhalte und Werkzeuge/Wissensmanagement"
             },
             {
                 "value": 20,
-                "name": "Metadaten",
-                "path": "Inhalte und Werkzeuge/Metadaten"
+                "name": "Mail, Kalender",
+                "path": "Inhalte und Werkzeuge/Mail, Kalender"
             },
             {
                 "value": 20,
-                "name": "Repositorien / Referatorien",
-                "path": "Inhalte und Werkzeuge/Repositorien / Referatorien"
+                "name": "Chat",
+                "path": "Inhalte und Werkzeuge/Chat"
             },
             {
                 "value": 20,
-                "name": "Schnittstellen",
-                "path": "Inhalte und Werkzeuge/Schnittstellen"
-            },
-            {
-                "value": 20,
-                "name": "Learning Record Store",
-                "path": "Inhalte und Werkzeuge/Learning Record Store"
-            },
-            {
-                "value": 20,
-                "name": "Office-Anwendungen",
-                "path": "Inhalte und Werkzeuge/Office-Anwendungen"
-            },
-            {
-                "value": 20,
-                "name": "Lern-Management-System (LMS)",
-                "path": "Inhalte und Werkzeuge/Lern-Management-System (LMS)"
-            },
-            {
-                "value": 20,
-                "name": "Weitere Tools",
-                "path": "Inhalte und Werkzeuge/Weitere Tools"
+                "name": "Videokonferenzen",
+                "path": "Inhalte und Werkzeuge/Videokonferenzen"
             }
         ]
     }
