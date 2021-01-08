@@ -102,5 +102,47 @@
                 "path": "Inhalte und Werkzeuge/Videokonferenzen"
             }
         ]
+    },
+    {
+        "value": 100,
+        "name": "Hardware",
+        "path": "Hardware",
+        "children": [
+            {
+                "value": 20,
+                "name": "Stationäre Arbeitsplätze",
+                "path": "Inhalte und Werkzeuge/Stationäre Arbeitsplätze"
+            },
+            {
+                "value": 20,
+                "name": "Netzwerkinfrastruktur",
+                "path": "Inhalte und Werkzeuge/Netzwerkinfrastruktur"
+            },
+            {
+                "value": 20,
+                "name": "Lern- und Projektgruppen einrichten und verwalten",
+                "path": "Inhalte und Werkzeuge/Lern- und Projektgruppen einrichten und verwalten"
+            },
+            {
+                "value": 20,
+                "name": "Wissensmanagement",
+                "path": "Inhalte und Werkzeuge/Wissensmanagement"
+            },
+            {
+                "value": 20,
+                "name": "Mail, Kalender",
+                "path": "Inhalte und Werkzeuge/Mail, Kalender"
+            },
+            {
+                "value": 20,
+                "name": "Chat",
+                "path": "Inhalte und Werkzeuge/Chat"
+            },
+            {
+                "value": 20,
+                "name": "Videokonferenzen",
+                "path": "Inhalte und Werkzeuge/Videokonferenzen"
+            }
+        ]
     }
 ]
