@@ -7,21 +7,25 @@
             {
                 "value": 20,
                 "name": "Technische Standards",
+                "id": "1-1",
                 "path": "Inhalte und Werkzeuge/Technische Standards"
             },
             {
                 "value": 20,
                 "name": "Rechtliche Standards",
+                "id": "1-2",
                 "path": "Inhalte und Werkzeuge/Rechtliche Standards"
             },
             {
                 "value": 20,
                 "name": "Prüfverfahren",
+                "id": "1-3",
                 "path": "Inhalte und Werkzeuge/Prüfverfahren"
             },
             {
                 "value": 20,
                 "name": "OER",
+                "id": "1-4",
                 "path": "Inhalte und Werkzeuge/OER"
             },
             {
