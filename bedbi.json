@@ -5,80 +5,14 @@
         "path": "Accessibility"
     },
     {
-        "value": 180,
-        "name": "Accounts",
-        "path": "Accounts",
+        "value": 100,
+        "name": "Inhalte und Werkzeuge",
+        "path": "Inhalte und Werkzeuge",
         "children": [
             {
-                "value": 76,
-                "name": "Access",
-                "path": "Accounts/Access",
-                "children": [
-                    {
-                        "value": 12,
-                        "name": "DefaultAccessPlugin.bundle",
-                        "path": "Accounts/Access/DefaultAccessPlugin.bundle"
-                    },
-                    {
-                        "value": 28,
-                        "name": "FacebookAccessPlugin.bundle",
-                        "path": "Accounts/Access/FacebookAccessPlugin.bundle"
-                    },
-                    {
-                        "value": 20,
-                        "name": "LinkedInAccessPlugin.bundle",
-                        "path": "Accounts/Access/LinkedInAccessPlugin.bundle"
-                    },
-                    {
-                        "value": 16,
-                        "name": "TencentWeiboAccessPlugin.bundle",
-                        "path": "Accounts/Access/TencentWeiboAccessPlugin.bundle"
-                    }
-                ]
-            },
-            {
-                "value": 92,
-                "name": "Authentication",
-                "path": "Accounts/Authentication",
-                "children": [
-                    {
-                        "value": 24,
-                        "name": "FacebookAuthenticationPlugin.bundle",
-                        "path": "Accounts/Authentication/FacebookAuthenticationPlugin.bundle"
-                    },
-                    {
-                        "value": 16,
-                        "name": "LinkedInAuthenticationPlugin.bundle",
-                        "path": "Accounts/Authentication/LinkedInAuthenticationPlugin.bundle"
-                    },
-                    {
-                        "value": 20,
-                        "name": "TencentWeiboAuthenticationPlugin.bundle",
-                        "path": "Accounts/Authentication/TencentWeiboAuthenticationPlugin.bundle"
-                    },
-                    {
-                        "value": 16,
-                        "name": "TwitterAuthenticationPlugin.bundle",
-                        "path": "Accounts/Authentication/TwitterAuthenticationPlugin.bundle"
-                    },
-                    {
-                        "value": 16,
-                        "name": "WeiboAuthenticationPlugin.bundle",
-                        "path": "Accounts/Authentication/WeiboAuthenticationPlugin.bundle"
-                    }
-                ]
-            },
-            {
-                "value": 12,
-                "name": "Notification",
-                "path": "Accounts/Notification",
-                "children": [
-                    {
-                        "value": 12,
-                        "name": "SPAAccountsNotificationPlugin.bundle",
-                        "path": "Accounts/Notification/SPAAccountsNotificationPlugin.bundle"
-                    }
-                ]
+                "value": 20,
+                "name": "Technische Standards",
+                "path": "Inhalte und Werkzeuge/Technische Standards"
             }
         ]
     }
