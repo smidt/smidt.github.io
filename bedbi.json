@@ -26,7 +26,8 @@
                 "value": 20,
                 "name": "OER",
                 "id": "1-4",
-                "path": "Inhalte und Werkzeuge/OER"
+                "path": "Inhalte und Werkzeuge/OER",
+                "itemStyle": { color: 'red'}
             },
             {
                 "value": 20,
