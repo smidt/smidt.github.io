@@ -27,21 +27,34 @@
                 "name": "OER",
                 "id": "1-4",
                 "path": "Inhalte und Werkzeuge/OER",
-                "itemStyle": { "color": "red" }
+                "projects": [ 
+			"SODIX"
+		]
             },
             {
                 "value": 20,
                 "name": "Metadaten",
+                "projects": [ 
+			"SODIX"
+		],
                 "path": "Inhalte und Werkzeuge/Metadaten"
             },
             {
                 "value": 20,
                 "name": "Repositorien / Referatorien",
+                "projects": [ 
+			"SODIX"
+		],
                 "path": "Inhalte und Werkzeuge/Repositorien / Referatorien"
             },
             {
                 "value": 20,
                 "name": "Schnittstellen",
+                "projects": [ 
+			"SODIX",
+			"VIDIS",
+			"EDU-Check"
+		],
                 "path": "Inhalte und Werkzeuge/Schnittstellen"
             },
             {
@@ -62,6 +75,10 @@
             {
                 "value": 20,
                 "name": "Weitere Tools",
+                "projects": [ 
+			"SODIX",
+			"EDU-Check"
+		],
                 "path": "Inhalte und Werkzeuge/Weitere Tools",
                 "children": [
                     {
