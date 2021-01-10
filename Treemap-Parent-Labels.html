@@ -15,10 +15,10 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-    	<div id="chart" style="position: absolute; width: 80%; height: 80%; top: 10%; left 10%; margin:0 auto;"></div>
+    	<div id="chart" style="width: 1200px; height: 900; margin:0 auto;"></div>
     	<script>				
 		var chart = document.getElementById('chart');
-		var myChart = echarts.init(chart, 'dark');
+		var myChart = echarts.init(chart, 'roma');
 		myChart.showLoading();
 
 		$.get('https://smidt.github.io/bedbi.json', function (diskData) {
