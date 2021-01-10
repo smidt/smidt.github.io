@@ -1,6 +1,13 @@
 <!doctype html>
-    <html>
-    <head>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     	<title>ECharts Sample</title>
     	<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.0.0/echarts.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,20 +22,84 @@
 		$.get('https://smidt.github.io/bedbi.json', function (diskData) {
 			myChart.hideLoading();
 
-			function colorMappingChange(value) {
-				var levelOption = getLevelOption(value);
-				chart.setOption({
-					series: [{
-						levels: levelOption
-					}]
-				});
-			}
+			//function colorMappingChange(value) {
+			//	var levelOption = getLevelOption(value);
+			//	chart.setOption({
+			//		series: [{
+			//			levels: levelOption
+			//		}]
+			//	});
+			//}
 
 			var formatUtil = echarts.format;
+			
+			// mode ist die Nummer (1-4). originList die Daten 
+			function buildData(mode, originList) {
+				var out = [];
+
+				for (var i = 0; i < originList.length; i++) {
+					var node = originList[i];
+					var newNode = out[i] = cloneNodeInfo(node);
+					//var value = newNode.value;
+
+					if (!newNode) {
+						continue;
+					}
+
+					// TODO: Use modes array in if-statement
+					if (!(newNode.projects === undefined)) {
+						// if mode === 0 do nothing
+						if (mode === 1 && newNode.projects.includes('SODIX')) {
+							newNode.itemStyle = {
+								"color": '#FF6600'
+							}
+						}
+						if (mode === 2 && newNode.projects.includes('VIDIS')) {
+							newNode.itemStyle = {
+								"color": '#FF6600'
+							}
+						}
+						if (mode === 3 && newNode.projects.includes('EDU-Check')) {
+							newNode.itemStyle = {
+								"color": '#FF6600'
+							}
+						}
+						if (mode === 4 && (newNode.projects.includes('SODIX') || newNode.projects.includes('VIDIS') || newNode.projects.includes('EDU-Check'))) {
+							newNode.itemStyle = {
+								"color": '#FF6600'
+							}
+						}
+					}
+
+					if (node.children) {
+						newNode.children = buildData(mode, node.children);
+					}
+				}
+
+				return out;
+			}
+			
+			function cloneNodeInfo(node) {
+				if (!node) {
+					return;
+				}
+
+				var newNode = {};
+				newNode.name = node.name;
+				newNode.id = node.id;
+				//newNode.discretion = node.discretion;
+				//newNode.value = (node.value || []).slice();
+				newNode.value = node.value
+				newNode.itemStyle = node.itemStyle
+				newNode.projects = node.projects
+				return newNode;
+			}
 
 			function getLevelOption() {
-				return [{
+				var normal = [
+					{
 						itemStyle: {
+							//borderColor: '#FF6600',
 							borderColor: '#777',
 							borderWidth: 0,
 							gapWidth: 1
@@ -36,9 +107,10 @@
                 				upperLabel: {
                     					show: false
                 				}
-            				},
-	            			{
+            		},
+	            	{
         	        			itemStyle: {
+                	    				//borderColor: '#FF6600',
                 	    				borderColor: '#555',
                     					borderWidth: 5,
                     					gapWidth: 1
@@ -48,63 +120,100 @@
                 	        				borderColor: '#ddd'
                     					}
                 				}
-	            			},
-        	    			{
+	            	},
+        	    	{
                 				colorSaturation: [0.35, 0.5],
                 				itemStyle: {
                     					borderWidth: 5,
                     					gapWidth: 1,
                     					borderColorSaturation: 0.6
 	                			}
-        	    			}
-        			];
-	    		}
+        	    	}
+        		];
+				return normal;
+			}
+			
+			function getTooltipFormatter(mode) {
+				return function (info) {
+					var value = info.value;
+                	var treePathInfo = info.treePathInfo;
+                	var treePath = [];
 
-    			myChart.setOption(option = {
+                	for (var i = 1; i < treePathInfo.length; i++) {
+                    	treePath.push(treePathInfo[i].name);
+	                }
+
+	                return [
+        	        	'<div class="tooltip-title ' + info.name + '">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
+                				].join('');
+				};
+			}
+				
+			function createSeriesCommon(mode) {
+					return {
+						name: 'Bausteine',
+						type: 'treemap',
+						visibleMin: 300,
+	                	label: {
+        	            	show: true,
+                	    	formatter: '{b}'
+                		},
+                		upperLabel: {
+                    		show: true,
+                    		height: 30
+	                	},
+						tooltip: {
+							formatter: getTooltipFormatter(mode)
+						},
+						itemStyle: {
+							normal: {
+								borderColor: '#fff'
+							}
+						},
+						levels: getLevelOption(0)
+					};
+			}
+				
+			var modes = ['Default', 'SODIX', 'VIDIS', 'EDU-Check', 'Alle Projekte'];
+
+    		myChart.setOption(option = {
 
         			title: {
             				text: 'Bausteine einer digitalen Bildungsinfrastruktur',
             				left: 'center'
 	        		},
+					
+					legend: {
+						data: modes,
+						selectedMode: 'single',
+						//selectedMode: 'multiple',
+						top: 55,
+						itemGap: 5,
+						backgroundColor: 'rgb(243,243,243)',
+						borderRadius: 5
+					},
 	
 	        		tooltip: {
-        	    			formatter: function (info) {
-                				var value = info.value;
-                				var treePathInfo = info.treePathInfo;
-                				var treePath = [];
-
-                				for (var i = 1; i < treePathInfo.length; i++) {
-                    					treePath.push(treePathInfo[i].name);
-	                			}
-
-	                			return [
-        	            				'<div class="tooltip-title">' + formatUtil.encodeHTML(treePath.join('/')) + '</div>',
-                				].join('');
-            				}
+        	    
 	        		},
-
-        			series: [
-            				{
-                				name: 'Bausteine',
-                				type: 'treemap',
-                				visibleMin: 300,
-	                			label: {
-        	            				show: true,
-                	    				formatter: '{b}'
-                				},
-                				upperLabel: {
-                    					show: true,
-                    					height: 30
-	                			},
-        	        			itemStyle: {
-                	    				borderColor: '#fff'
-                				},
-                				levels: getLevelOption(),
-                				data: diskData
-            				}
-	        		]
+					// mode ist ein Name. idx eine Zahl der Dimension
+        			series: modes.map(function (mode, idx) {
+						var seriesOpt = createSeriesCommon(idx);
+						seriesOpt.name = mode;
+						seriesOpt.top = 80;
+						//seriesOpt.visualDimension = idx === 2 ? 2 : null;
+						seriesOpt.data = buildData(idx, diskData);
+						//seriesOpt.data = diskData;
+						seriesOpt.levels = getLevelOption(idx);
+						return seriesOpt;
+					})
     			});
-		});
+			});
+			//var el = document.querySelector("div.tooltip-title");
+			//console.log("Element", el);
     	</script>
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     </body>
     </html>
